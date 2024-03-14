@@ -15,7 +15,7 @@
     <body>
         <%@include file="/WEB-INF/jspf/header.jspf" %>
         본문 내용이 들어갈 자리입니다.
-        <jsp:directive.include file="/WEB-INF/jspf/main_footer.jspf" />
+        <jsp:directive.include file="/WEB-INF/jspf/footer.jspf" />
             
     </body>
 </html>
