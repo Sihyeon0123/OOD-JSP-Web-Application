@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  * @author USER
  */
-
+// 커밋 확인
 @Controller
 public class SystemController {
 
