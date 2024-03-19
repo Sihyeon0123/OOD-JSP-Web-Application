@@ -47,7 +47,7 @@ public class Ch04Controller {
     }
 
     @GetMapping("/ch04/include")
-    public String ch04IncludeTest2(Model m) {
+    public String ch04IncludeTest2() {
         return "/ch04/include/index";
     }
     
