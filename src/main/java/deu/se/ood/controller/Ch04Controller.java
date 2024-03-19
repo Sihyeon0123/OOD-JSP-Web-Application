@@ -43,7 +43,7 @@ public class Ch04Controller {
 
         model.addAttribute("result", sumBean.getResult());
 
-        return "ch04/beans/show_sum1";
+        return "ch04/beans/show_sum2";
     }
 
     @GetMapping("/ch04/include")
