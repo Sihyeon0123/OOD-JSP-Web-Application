@@ -23,8 +23,6 @@
             Request parameter n : ${param.n}
         </div>
 
-        <% sumBean.calculate();%>
-
         <ul>
             <li>계산 결과 1: ${result}</li>
         </ul>
