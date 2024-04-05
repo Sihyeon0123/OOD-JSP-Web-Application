@@ -15,7 +15,11 @@
         <title>Simple Tag Handler</title>
     </head>
     <body>
-        
+        <mytags:hello user="홍길동" count="5"></mytags:hello>
+        <mytags:hello user="전우치">
+            오늘은 날씨가 아주 좋습니다.
+        </mytags:hello>
+
         <%@include file="/WEB-INF/jspf/main_footer.jspf" %>
     </body>
 </html>
