@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Iterator;
 import java.util.Optional;
@@ -21,7 +23,7 @@ import java.util.Optional;
 @Controller
 @Slf4j
 public class Ch05Controller {
-    
+
     @GetMapping("/ch05/eltest")
     public String eltest() {
         log.debug("호출");
@@ -47,5 +49,25 @@ public class Ch05Controller {
         }
         log.debug("execUrl = {}", execUrl);
         return execUrl;
+    }
+
+    @GetMapping("ch05/beanstest")
+    public String beansTest() {
+        return "/ch05/beanstest/index";
+    }
+
+    @PostMapping("ch05/beanstest/show_sum2")
+    public String showSum2() {
+        return "ch05/beanstest/show_sum2";
+    }
+
+    @GetMapping("/ch05/urltest")
+    public String urlTest() {
+        return "/ch05/urltest/index";
+    }
+
+    @GetMapping("/ch05/urltest_footer")
+    public String urlTestFooter() {
+        return "/ch05/urltest/footer";
     }
 }

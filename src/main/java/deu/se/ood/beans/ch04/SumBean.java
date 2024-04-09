@@ -1,11 +1,17 @@
 package deu.se.ood.beans.ch04;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Slf4j
 public class SumBean {
-    private Logger log = LoggerFactory.getLogger(getClass());
+    @Getter @Setter
     private  int n;
+    @Getter @Setter
+    private  int result;
 
     public SumBean() {
         log.debug("The instance SumBean created...");
@@ -15,23 +21,4 @@ public class SumBean {
     public void calculate(){
         result = n * (n + 1) / 2;
     }
-
-    public int getN() {
-        return n;
-    }
-
-    public void setN(int n) {
-        this.n = n;
-    }
-
-    public int getResult() {
-        return result;
-    }
-
-    public void setResult(int result) {
-        this.result = result;
-    }
-
-    private  int result;
-
 }
