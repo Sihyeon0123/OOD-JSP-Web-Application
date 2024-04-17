@@ -63,6 +63,17 @@
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
         </dependency>
         <!-- 240102 LJM: end -->
+        <!--MySQL 종속성 추가-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+        </dependency>
+        <!-- Hikari CP -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
