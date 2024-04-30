@@ -17,15 +17,15 @@
 
         <h1>첫 번째 JSP 웹 응용프로그램</h1>
         <hr>
-        <br> 
+        <br>
 
         <p>
             1. JSP 주석: 	<%-- 볼 수 없음 --%>
-        </p> 
+        </p>
 
         <p>
             2. HTML 주석:	<!-- 볼 수 있음 / 1 + 2 = ${1+2} -->
-        </p> 
+        </p>
 
         <p>
             3. 선언(declaration) 사용: &nbsp;
@@ -38,12 +38,12 @@
                 }
             %>
             a + b = <%=a + b%>
-        </p> 
+        </p>
 
         <p>
             4. 스크립트 표현식(expression): <br>
             현재 시각: <%=new java.util.Date()%>, <br>
-            현재 시각 (since 1.8): <%= java.time.LocalDateTime.now().toString()%>, <br> 
+            현재 시각 (since 1.8): <%= java.time.LocalDateTime.now().toString()%>, <br>
             현재 날짜 (since 1.8, no Time): <%= java.time.LocalDate.now()%>, <br>
             현재 시각 (since 1.8, no Date): <%= java.time.LocalTime.now().toString()%>, <br>
             <%= getName()%>

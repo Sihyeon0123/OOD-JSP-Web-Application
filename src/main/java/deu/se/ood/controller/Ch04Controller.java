@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @Slf4j
 public class Ch04Controller {
-    @Autowired
+
     private ServletContext ctx;
     @Autowired
     private SumSpringBean sumBean;
@@ -37,6 +37,7 @@ public class Ch04Controller {
 
     @PostMapping("/ch04/beans/show_sum2")
     public String ch04BeansShowSum2(@RequestParam String n, Model model){
+        model.addAttribute("n", n);
         log.debug("show_sum: n = {}", sumBean.getResult());
         sumBean.setN(Integer.parseInt(n));
         sumBean.calculate();
