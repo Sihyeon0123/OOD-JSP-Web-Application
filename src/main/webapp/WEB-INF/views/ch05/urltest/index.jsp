@@ -27,17 +27,24 @@
       <c:param name="date" value="<%=java.time.LocalDate.now().toString()%>"/>
       <c:param name="user" value="홍길동"/>
     </c:url>
-    <c:url value="urltest_footer" var="footerUrl2">
-      <c:param name="date" value="<%=java.util.Date%>"/>
+    <c:url value="footer.jsp" var="footerUrl2">
+      <c:param name="date" value="<%=java.time.LocalDate.now().toString()%>"/>
+      <c:param name="user" value="전우치"/>
+    </c:url>
+    <c:url value="footer" var="footer1">
+      <c:param name="date" value="<%=java.time.LocalDate.now().toString()%>"/>
+      <c:param name="user" value="홍길동"/>
+    </c:url>
+    <c:url value="footer" var="footer2">
+      <c:param name="date" value="<%=java.time.LocalDate.now().toString()%>"/>
       <c:param name="user" value="전우치"/>
     </c:url>
     <br>
 
     footer URL1: <c:out value="${footerUrl1}"/> <br>
     footer URL2: <c:out value="${footerUrl2}"/> <br><br>
-
-    <a href="${footerUrl1}">footer1 따로 보기</a> &nbsp; &nbsp; &nbsp;
-    <a href="${footerUrl2}">footer2 따로 보기 </a>
+    <a href="${footer1}">footer1 따로 보기</a> &nbsp; &nbsp; &nbsp;
+    <a href="${footer2}">footer2 따로 보기 </a>
 
     <c:import url="${footerUrl1}" var="urltest_footer1"/>
     <c:import url="${footerUrl2}" var="urltest_footer2"/>

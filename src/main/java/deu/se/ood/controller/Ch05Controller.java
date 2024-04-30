@@ -66,7 +66,7 @@ public class Ch05Controller {
         return "/ch05/urltest/index";
     }
 
-    @GetMapping("/ch05/urltest_footer")
+    @GetMapping("/ch05/footer")
     public String urlTestFooter() {
         return "/ch05/urltest/footer";
     }
