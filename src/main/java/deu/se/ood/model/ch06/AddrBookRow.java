@@ -4,13 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+@Getter
 @AllArgsConstructor
 @Builder
 public class AddrBookRow {
-    @Getter
     private String email;
-    @Getter
     private String name;
-    @Getter
     private String phone;
 }

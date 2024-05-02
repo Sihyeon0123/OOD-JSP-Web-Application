@@ -68,16 +68,15 @@ public class Ch06Controller {
     }
 
     @PostMapping("/ch06/insert.do")
-    public String insertAddrBook(@RequestParam String email, @RequestParam String name, @RequestParam String phone, Model model) {
+    public String insertAddrBook(@RequestParam String email, @RequestParam String name, @RequestParam String phone) {
         String userName = env.getProperty("spring.datasource.username");
         String password = env.getProperty("spring.datasource.password");
         String jdbcDriver = env.getProperty("spring.datasource.driver-class-name");
 
         AddrBookManager manager = new AddrBookManager(this.ip, this.port, jdbcDriver, userName, password);
         manager.addRow(email, name, phone);
-
+        // redirect => response.sendRedirect() 함수를 호출
         return "redirect:/ch06/inserttable";
-
     }
 
     @GetMapping("/ch06/delete_addrbook")

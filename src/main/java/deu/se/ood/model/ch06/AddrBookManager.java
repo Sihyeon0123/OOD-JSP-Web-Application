@@ -49,6 +49,12 @@ public class AddrBookManager {
                 String name = rs.getString("name");
                 String phone = rs.getString("phone");
                 dataList.add(new AddrBookRow(email, name, phone));
+                // builder 패턴 적용시
+//                dataList.add(AddrBookRow.builder()
+//                                        .email(email)
+//                                        .name(name)
+//                                        .phone(phone)
+//                                        .build());
             }
 
             if (rs != null) rs.close();
@@ -70,24 +76,40 @@ public class AddrBookManager {
 
         log.debug("JDBC_URL(): " + JDBC_URL);
 
-        Connection conn = null;
-        ResultSet rs = null;
-
-        try{
-            Class.forName(jdbcDriver);
-            conn = DriverManager.getConnection(JDBC_URL, this.username, this.password);
+        // try 를 사용하여 명시적으로 close 하지 않아도 객체가 반환된다.
+        try( Connection conn = DriverManager.getConnection(JDBC_URL, username, password) ){
             String sql = "INSERT INTO addrbook VALUES(?, ?, ?)";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, email);
-            pstmt.setString(2, name);
-            pstmt.setString(3, phone);
-            pstmt.executeUpdate();
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                pstmt.setString(1, email);
+                pstmt.setString(2, name);
+                pstmt.setString(3, phone);
 
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
-        } catch (Exception e) {
+                int result = pstmt.executeUpdate();
+                log.debug("변경된 행: " + result);
+            }
+        } catch (Exception e){
             log.error("오류가 발생하였습니다. (발생 오류: {})", e.getMessage());
         }
+
+
+//        Connection conn = null;
+//        ResultSet rs = null;
+//
+//        try{
+//            Class.forName(jdbcDriver);
+//            conn = DriverManager.getConnection(JDBC_URL, this.username, this.password);
+//            String sql = "INSERT INTO addrbook VALUES(?, ?, ?)";
+//            PreparedStatement pstmt = conn.prepareStatement(sql);
+//            pstmt.setString(1, email);
+//            pstmt.setString(2, name);
+//            pstmt.setString(3, phone);
+//            pstmt.executeUpdate();
+//
+//            if (pstmt != null) pstmt.close();
+//            if (conn != null) conn.close();
+//        } catch (Exception e) {
+//            log.error("오류가 발생하였습니다. (발생 오류: {})", e.getMessage());
+//        }
     }
 
     public void deleteRow(String email) {
