@@ -30,8 +30,11 @@
     <h1>주소록</h1>
     <hr/>
     <%
+        // Spring Boot @environment 를 통해서 가져온 정보
         final String JDBC_DRIVER = (String)pageContext.getAttribute("db_driver");
-        final String mysqlServerIp = (String)pageContext.getAttribute("mysqlServerIp");
+        // Controller 에서 전송한 정보
+        final String mysqlServerIp = (String) request.getAttribute("mysql_server_ip");
+        // configProperties 메서드를 통해 반환받은 객체를 사용하여 얻은 정보
         final String mysqlServerPort = (String)pageContext.getAttribute("mysqlServerPort");
 
         final String JDBC_URL = String.format("jdbc:mysql://%s:%s/webmail?serverTimezone=Asia/Seoul", mysqlServerIp, mysqlServerPort);

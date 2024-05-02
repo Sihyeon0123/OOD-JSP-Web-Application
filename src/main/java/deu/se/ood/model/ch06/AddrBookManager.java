@@ -48,13 +48,13 @@ public class AddrBookManager {
                 String email = rs.getString("email");
                 String name = rs.getString("name");
                 String phone = rs.getString("phone");
-                dataList.add(new AddrBookRow(email, name, phone));
-                // builder 패턴 적용시
-//                dataList.add(AddrBookRow.builder()
-//                                        .email(email)
-//                                        .name(name)
-//                                        .phone(phone)
-//                                        .build());
+//                dataList.add(new AddrBookRow(email, name, phone));
+//                 builder 패턴 적용시
+                dataList.add(AddrBookRow.builder()
+                                        .email(email)
+                                        .name(name)
+                                        .phone(phone)
+                                        .build());
             }
 
             if (rs != null) rs.close();

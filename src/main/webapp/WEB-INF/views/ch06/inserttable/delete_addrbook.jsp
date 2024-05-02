@@ -21,7 +21,7 @@
 <hr/>
 <table border="1">
     <thead>
-    <tr>
+    <tr>ㅌ
         <th>이름</th>
         <th>이메일</th>
         <th>전화번호</th>
@@ -34,7 +34,12 @@
             <td>${row.name}</td>
             <td>${row.email}</td>
             <td>${row.phone}</td>
-            <td><form action="${pageContext.request.contextPath}/ch06/delete.do" style="display: inline" method="POST"><input type="hidden" name="email" value="${row.email}"><input type="submit" value="삭제"></form></td>
+            <td>
+                <form action="${pageContext.request.contextPath}/ch06/delete.do" style="display: inline" method="POST">
+                    <input type="hidden" name="email" value="${row.email}">
+                    <input type="submit" value="삭제">
+                </form>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
