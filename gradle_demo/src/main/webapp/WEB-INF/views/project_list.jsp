@@ -10,11 +10,6 @@
         <title>JSP 교재 내용</title>
         <link rel="stylesheet" type="text/css"
               href="${pageContext.request.contextPath}/css/my_style.css">
-        <script>
-            <c:if test="${!empty msg}">
-            alert("${msg}");
-            </c:if>
-        </script>
     </head>
     <body>
         <h1>JSP 교재 내용</h1>

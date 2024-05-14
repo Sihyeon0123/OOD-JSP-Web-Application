@@ -34,13 +34,14 @@ public class Ch08Controller {
 
         ctx.setAttribute("ctxBirdSound", birdSound2);
 
-        log.debug("dogSound = {}, catSound = {}, birdSound", dogSound, catSound, birdSound2);
+        log.debug("dogSound = {}, catSound = {}, birdSound = {}", dogSound, catSound, birdSound2);
 
         return "ch08/init_parameter/index";
     }
 
     @GetMapping("/")
     public String index() {
-        return "project_list";  // project_list.jsp 를 읽어서 반환
+        log.debug("/");
+        return "project_list";
     }
 }

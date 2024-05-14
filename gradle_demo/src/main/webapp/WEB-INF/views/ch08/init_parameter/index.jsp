@@ -47,11 +47,6 @@
            border-style: groove;
         }
     </style>
-    <script>
-        <c:if test="${!empty msg}">
-            alert(${msg});
-        </c:if>
-    </script>
 </head>
 <body>
     <p>다음은 웹 애플리케이션 초기화 예제입니다.</p>

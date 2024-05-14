@@ -31,8 +31,6 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'org.apache.tomcat.embed:tomcat-embed-core:10.1.23'
-	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
-
 }
 
 tasks.named('test') {
