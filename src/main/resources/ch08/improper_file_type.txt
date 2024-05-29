@@ -1,0 +1,11 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<title>부적절한 파일 유형!!!</title>
+</head>
+<body>
+"txt" 형태가 아닌 파일은 선택하여 내려 받기가 거부되었습니다. <br><br>
+
+(파일명: %%FILENAME%%)
+</body>
+</html>
